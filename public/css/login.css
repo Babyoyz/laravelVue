@@ -1,0 +1,15 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400;700&family=Kanit:wght@300&family=Prompt:wght@200;400&family=Roboto+Serif:wght@400;500&display=swap');
+
+body{
+    font-family: 'Kanit', sans-serif;
+    background-color: rgb(240 236 236);
+    }
+
+    

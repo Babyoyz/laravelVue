@@ -7,6 +7,8 @@ use App\Userapp;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
+use Illuminate\Support\Facades\Session;
+
 class UserappController extends Controller
 {
  
@@ -91,7 +93,7 @@ class UserappController extends Controller
         }
     }
 
-    public function checklogin(){
+    public function checklogin(Request $request){
 
 
         $Username =  isset($this->req["username"]) ? $this->req["username"] : null;
@@ -107,6 +109,15 @@ class UserappController extends Controller
 
             if (Hash::check($Password, $QuerySelect->Password)) {
                 
+
+                $request->session()->put('Login', '1');
+
+                // Session::put('Login', '1');
+                // Session::put('ID', $QuerySelect->ID);
+                // Session::put('Username', $QuerySelect->Username);
+                // Session::put('Leveluser', $QuerySelect->Leveluser);
+                // Session::put('InfomationUser', $QuerySelect);
+
                 return response()->json([
                     'statuscode' => '200',
                     'Des' => "Login Success",

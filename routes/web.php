@@ -14,5 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::get('login', 'RouteController@loginpage');
+Route::get('main_index', 'RouteController@main_index');
